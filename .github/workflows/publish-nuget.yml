@@ -37,10 +37,8 @@ jobs:
 
     - name: List packages (debug)
       run: Get-ChildItem -Path nupkgs
-      shell: pwsh
 
     - name: Publish to NuGet.org
       run: |
         $nupkg = Get-ChildItem -Path nupkgs -Filter *.nupkg | Select-Object -First 1
         dotnet nuget push $nupkg.FullName --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
-      shell: pwsh
