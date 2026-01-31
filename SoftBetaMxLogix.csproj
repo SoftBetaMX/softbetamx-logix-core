@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<VersionPrefix>1.1.1</VersionPrefix>
+		<Authors>SoftBetaMX Carlos Betancourt</Authors>
+		   <PackageTags>MicroLogix; tags</PackageTags>
+		<AssemblyName>SoftBetaMxLogix</AssemblyName>
+		<description>Library to Micrologix.</description>
+		<Copyright>SoftBetaMX 2022</Copyright>
+	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <Reference Include="libplctag.NativeImport">
+      <HintPath>packages\logix\libplctag.NativeImport.dll</HintPath>
+    </Reference>
+    <Reference Include="LibplctagWrapper">
+      <HintPath>packages\logix\LibplctagWrapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+	<ItemGroup>
+		<Content Include="packages\logix\LibplctagWrapper.dll">
+			<Pack>true</Pack>
+			<PackagePath>lib\$(TargetFramework)</PackagePath>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="packages\logix\libplctag.NativeImport.dll">
+			<Pack>true</Pack>
+			<PackagePath>lib\$(TargetFramework)</PackagePath>
+		</Content>
+	</ItemGroup>
+
+
+
+
+
+</Project>
