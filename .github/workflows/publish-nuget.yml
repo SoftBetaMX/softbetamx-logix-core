@@ -12,28 +12,32 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
-    
+    runs-on: self-hosted
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '6.0.x'
-    
+      continue-on-error: true
+
+    - name: Verify .NET installation
+      run: dotnet --version
+
     - name: Restore dependencies
       run: dotnet restore SoftBetaMxLogix.csproj
-    
+
     - name: Build
       run: dotnet build SoftBetaMxLogix.csproj --configuration Release --no-restore
-    
+
     - name: Pack
       run: dotnet pack SoftBetaMxLogix.csproj --configuration Release --no-build --output nupkgs
-    
+
     - name: List packages (debug)
       run: ls -la nupkgs
-    
+
     - name: Publish to NuGet.org
       run: |
         nupkg=$(ls nupkgs/*.nupkg | head -n 1)
