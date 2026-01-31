@@ -1,0 +1,40 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Package version (e.g., 1.0.0)'
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '6.0.x'
+    
+    - name: Restore dependencies
+      run: dotnet restore SoftBetaMxLogix.csproj
+    
+    - name: Build
+      run: dotnet build SoftBetaMxLogix.csproj --configuration Release --no-restore
+    
+    - name: Pack
+      run: dotnet pack SoftBetaMxLogix.csproj --configuration Release --no-build --output nupkgs
+    
+    - name: List packages (debug)
+      run: ls -la nupkgs
+    
+    - name: Publish to NuGet.org
+      run: |
+        nupkg=$(ls nupkgs/*.nupkg | head -n 1)
+        dotnet nuget push "$nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate

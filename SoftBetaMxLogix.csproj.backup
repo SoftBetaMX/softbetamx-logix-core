@@ -1,0 +1,69 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <PackageId>SoftbetaMX.Wpf.MetaPackage</PackageId>
+    <Version>1.0.6</Version>
+    <Authors>SoftBetaMX</Authors>
+    <Company>SoftBetaMX</Company>
+    <Product>SoftbetaMX WPF Meta-Package</Product>
+    <Description>Meta-paquete con todas las dependencias comunes para proyectos WPF de SoftbetaMX. Incluye: Syncfusion WPF Controls completos (Grid, PdfViewer, DocIO, etc.), múltiples temas (Material, Fluent, Windows11, Metro), Microsoft XAML Behaviors, CommunityToolkit.Mvvm, MaterialDesignThemes y Entity Framework Core. Simplifica la configuración de nuevos proyectos WPF al proporcionar todas las dependencias necesarias en un solo paquete.</Description>
+    <Copyright>Copyright © 2026 SoftBetaMX. Todos los derechos reservados.</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReleaseNotes>v1.0.6: Updated README to English. Added CommunityToolkit.Mvvm 8.4.0, MaterialDesignThemes 5.3.0, Entity Framework Core 10.0.2. Fixed MIT License.</PackageReleaseNotes>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoWarn>NU5128</NoWarn>
+    <PackageProjectUrl>https://github.com/SoftBetaMX/SoftbetaWpfNuget</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SoftBetaMX/SoftbetaWpfNuget</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>wpf;syncfusion;metapackage;softbetamx;net10;wpf-controls;xaml;themes;datagrid;pdf;mvvm;entityframework;materialdesign</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="icon.png" Pack="true" PackagePath="\" Condition="Exists('icon.png')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Dependencias se propagan a proyectos que usen este meta-package -->
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="Syncfusion.DocIO.Wpf" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Grid.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Grouping.Base" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Licensing" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.PdfViewer.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfAccordion.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfBusyIndicator.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfGauge.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfGrid.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfHubTile.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfKanban.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfNavigationDrawer.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfProgressBar.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfSkinManager.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfTextInputLayout.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.SfTreeView.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Shared.Base" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Shared.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Themes.Blend.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Themes.FluentDark.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Themes.FluentLight.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Themes.Lime.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Themes.MaterialDark.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Themes.MaterialLight.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Themes.Metro.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Themes.Office365.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Themes.Windows11Dark.WPF" Version="32.1.19" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="32.1.19" />
+  </ItemGroup>
+</Project>

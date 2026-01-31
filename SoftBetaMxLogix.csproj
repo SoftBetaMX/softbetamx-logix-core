@@ -1,19 +1,32 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<VersionPrefix>1.1.1</VersionPrefix>
-		<Authors>SoftBetaMX Carlos Betancourt</Authors>
-		   <PackageTags>MicroLogix; tags</PackageTags>
-		<AssemblyName>SoftBetaMxLogix</AssemblyName>
-		<description>Library to Micrologix.</description>
-		<Copyright>SoftBetaMX 2022</Copyright>
-	</PropertyGroup>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    
+    <!-- NuGet Package Metadata -->
+    <PackageId>SoftBetaMxLogix</PackageId>
+    <Version>1.1.1</Version>
+    <Authors>SoftBetaMX Carlos Betancourt</Authors>
+    <Company>SoftBetaMX</Company>
+    <Product>SoftBetaMX Logix Core</Product>
+    <Description>A .NET library for communicating with Allen-Bradley MicroLogix PLCs. Built on libplctag for reliable industrial automation communication.</Description>
+    <Copyright>Copyright © 2026 SoftBetaMX. All rights reserved.</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReleaseNotes>v1.1.1: Initial automated release setup with CI/CD</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/SoftBetaMX/softbetamx-logix-core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SoftBetaMX/softbetamx-logix-core</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>micrologix;plc;allen-bradley;automation;scada;industrial;libplctag;softbetamx</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AssemblyName>SoftBetaMxLogix</AssemblyName>
   </PropertyGroup>
-	
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
   <ItemGroup>
     <Reference Include="libplctag.NativeImport">
       <HintPath>packages\logix\libplctag.NativeImport.dll</HintPath>
@@ -23,21 +36,17 @@
     </Reference>
   </ItemGroup>
 
-	<ItemGroup>
-		<Content Include="packages\logix\LibplctagWrapper.dll">
-			<Pack>true</Pack>
-			<PackagePath>lib\$(TargetFramework)</PackagePath>
-		</Content>
-	</ItemGroup>
-	<ItemGroup>
-		<Content Include="packages\logix\libplctag.NativeImport.dll">
-			<Pack>true</Pack>
-			<PackagePath>lib\$(TargetFramework)</PackagePath>
-		</Content>
-	</ItemGroup>
-
-
-
-
-
+  <ItemGroup>
+    <Content Include="packages\logix\LibplctagWrapper.dll">
+      <Pack>true</Pack>
+      <PackagePath>lib\$(TargetFramework)</PackagePath>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="packages\logix\libplctag.NativeImport.dll">
+      <Pack>true</Pack>
+      <PackagePath>lib\$(TargetFramework)</PackagePath>
+    </Content>
+  </ItemGroup>
 </Project>
