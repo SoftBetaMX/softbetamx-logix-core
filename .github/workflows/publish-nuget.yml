@@ -12,7 +12,7 @@ on:
 
 jobs:
   publish:
-    runs-on: [self-hosted, contabo]
+    runs-on: [self-hosted, Windows]
 
     steps:
     - uses: actions/checkout@v4
