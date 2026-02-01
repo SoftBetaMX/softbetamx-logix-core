@@ -13,6 +13,8 @@ on:
 jobs:
   publish:
     runs-on: [self-hosted, contabo]
+    env:
+      DOTNET_INSTALL_DIR: ${{ github.workspace }}/.dotnet
 
     steps:
     - uses: actions/checkout@v4
@@ -34,6 +36,9 @@ jobs:
       with:
         dotnet-version: '10.0.x'
       continue-on-error: true
+
+    - name: Add .NET to PATH
+      run: echo "${{ github.workspace }}/.dotnet" >> $GITHUB_PATH
 
     - name: Verify .NET installation
       run: dotnet --version
