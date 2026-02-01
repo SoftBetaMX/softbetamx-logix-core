@@ -1,7 +1,14 @@
 name: Publish NuGet Package
 
 on:
-  workflow_dispatch
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Package version (e.g., 1.0.0)'
+        required: true
 
 jobs:
   publish:
