@@ -7,14 +7,14 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>SoftBetaMxLogix</PackageId>
-    <Version>1.1.7</Version>
+    <Version>1.1.8</Version>
     <Authors>SoftBetaMX Carlos Betancourt</Authors>
     <Company>SoftBetaMX</Company>
     <Product>SoftBetaMX Logix Core</Product>
     <Description>A .NET library for communicating with Allen-Bradley MicroLogix PLCs. Built on libplctag for reliable industrial automation communication.</Description>
     <Copyright>Copyright © 2026 SoftBetaMX. All rights reserved.</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>v1.1.7: Multi-targeting support for .NET 6.0, 8.0, and 10.0</PackageReleaseNotes>
+    <PackageReleaseNotes>v1.1.8: Multi-targeting support for .NET 6.0, 8.0, and 10.0</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/SoftBetaMX/softbetamx-logix-core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SoftBetaMX/softbetamx-logix-core</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
